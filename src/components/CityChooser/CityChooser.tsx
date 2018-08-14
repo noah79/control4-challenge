@@ -148,7 +148,7 @@ export class CityChooser extends React.Component<MyProps> {
 				label={city.temp}
 				key={city.location}
 				onClick={handleClick}
-				icon={<div>icon</div>}
+				icon={city.details ? <div className={css.icon}><img src={`http://openweathermap.org/img/w/${city.details.weather.weather[0].icon}.png`}/></div> : <Icon icon='blank'/>}
 				text={highlightText(city.location, query)}
 			/>
 		);

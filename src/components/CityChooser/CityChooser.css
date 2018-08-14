@@ -30,11 +30,14 @@
 	.loading, .error {
 		margin-left: auto;
 	}
+}
 
-	.icon {
-		&, img {
-			width:  16px;
-			height: 16px;
-		}
+.icon {
+	display: flex;
+	img {
+		width:   16px;
+		height:  16px;
+		display: flex;
+		margin:  auto;
 	}
 }

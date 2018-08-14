@@ -22,11 +22,12 @@ export interface City {
 		weather: {
 			main: { temp: number, pressure: number, humidity: number, temp_max: number, temp_min: number },
 			weather: Array<Weather>
+			rain: {[time: string]: number}
 			precipitation: { mode: string, value: number }
 		},
-		forecast: {
-			list: Array<Forecast>
-		}
+		// forecast: {
+		// 	list: Array<Forecast>
+		// }
 	};
 }
 
@@ -95,11 +96,11 @@ export class CityStore {
 			var weather = await currentWeatherRequest.json();
 			console.log(weather);
 
-			const forecastRequest = await fetch(`http://api.openweathermap.org/data/2.5/forecast?APPID=${apiKey}&lat=${lat}&lon=${lng}&units=imperial`);
-			var forecast = await forecastRequest.json();
-			console.log(forecast);
+			// const forecastRequest = await fetch(`http://api.openweathermap.org/data/2.5/forecast?APPID=${apiKey}&lat=${lat}&lon=${lng}&units=imperial`);
+			// var forecast = await forecastRequest.json();
+			// console.log(forecast);
 
-			selectedCity.details = {geo, weather, forecast};
+			selectedCity.details = {geo, weather, /*forecast*/};
 		}
 	}
 }

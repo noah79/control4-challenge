@@ -34,7 +34,7 @@ export class CityWeatherDetails extends React.Component<MyProps, {}> {
 				                 : !selectedCity.details
 				                   ? null
 				                   : (() => {
-								const {details: {weather: {main: {temp, pressure, humidity, temp_max, temp_min}, precipitation, weather}, forecast}} = selectedCity;
+								const {details: {weather: {main: {temp, pressure, humidity, temp_max, temp_min}, precipitation, rain, weather}}} = selectedCity;
 								return <>
 									<HTMLTable className={css.detailTable} striped>
 										<tbody>
@@ -45,7 +45,8 @@ export class CityWeatherDetails extends React.Component<MyProps, {}> {
 
 										<tr>
 											<td>Chance of Rain:</td>
-											<td>{forecast.list.map((v, i) => <div key={i}>{JSON.stringify(toJS(v.rain))}</div>)}</td>
+											{/* This is actually rain in the past 3 hours, not predicted */}
+											<td>{_.keys(rain).map((time, i) => <div key={i} className={css.chanceOfRain}>{time} - {rain[time] * 100}%</div>)}</td>
 										</tr>
 										</tbody>
 									</HTMLTable>
