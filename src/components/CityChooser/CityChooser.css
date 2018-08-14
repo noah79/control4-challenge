@@ -1,0 +1,40 @@
+.root {
+	*:focus {
+		outline:none;
+	}
+
+	display: inline-flex;
+
+	>*:not(:last-child) {
+		margin-right: 5px;
+	}
+}
+
+.select {
+	min-width:15em;
+	overflow:hidden;
+	text-overflow: ellipsis;
+
+	:global .bp3-button-text {
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		flex:1;
+		display:flex;
+	}
+
+	button.city {
+		min-width: 15em;
+		justify-content: left;
+	}
+
+	.loading, .error {
+		margin-left: auto;
+	}
+
+	.icon {
+		&, img {
+			width:  16px;
+			height: 16px;
+		}
+	}
+}

@@ -1,0 +1,25 @@
+.root {
+	display:flex;
+	flex-direction: column;
+}
+
+.titlebar {
+	flex: 0 0 auto;
+}
+
+.details {
+	flex:1;
+}
+
+.detail-table {
+	td:first-child {
+		font-weight:bold;
+		width:15em;
+	}
+}
+
+.condition {
+	display:flex;
+	align-items: center;
+	text-transform: capitalize;
+}
